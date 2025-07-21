@@ -1,10 +1,10 @@
 ### POST Request to create a patient
-POST http://localhost:4000/patients
+POST http://localhost:8000/patients
 Content-Type: application/json
 
 {
-  "name": "Dili Boy",
-  "email": "dili@example.com",
+  "name": "Dili Boy with billing",
+  "email": "dili_billing@example.com",
   "address": "123 Main Street",
   "dateOfBirth": "1996-06-10",
   "registeredDate": "2025-06-11"
