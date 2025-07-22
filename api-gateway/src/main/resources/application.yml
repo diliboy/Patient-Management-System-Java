@@ -7,16 +7,6 @@ spring:
       server:
         webflux:
           routes:
-            - id: patient-service-route
-              uri: http://patient-service:4000
-              predicates:
-                - Path=/api/patients/**
-              filters:
-                - StripPrefix=1
-
-              ## REST CLIENT -> http://localhost:4004/api/patients
-              ## API GATEWAY -> http://patient-service:4000/patients
-
             - id: auth-service-route
               uri: http://auth-service:4005
               predicates:
@@ -27,6 +17,16 @@ spring:
             ## REST CLIENT -> http://localhost:4004/auth/login
             ## API GATEWAY -> http://auth-service:4005/login
 
+            - id: patient-service-route
+              uri: http://patient-service:4000
+              predicates:
+                - Path=/api/patients/**
+              filters:
+                - StripPrefix=1
+                - JwtValidation
+
+              ## REST CLIENT -> http://localhost:4004/api/patients
+              ## API GATEWAY -> http://patient-service:4000/patients
 
             # Route for /api/docs/patients to patient-service /v3/api-docs
             - id: api-docs-patient-route
