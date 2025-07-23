@@ -1,3 +1,6 @@
 ### GET Request to get all patients
-GET http://localhost:4004/api/patients
+#GET http://localhost:4004/api/patients
+
+### localstack address
+GET http://lb-fc2332bc.elb.localhost.localstack.cloud:4004/api/patients
 Authorization: Bearer {{token}}

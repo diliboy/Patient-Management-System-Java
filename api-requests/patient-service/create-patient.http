@@ -1,10 +1,13 @@
 ### POST Request to create a patient
-POST http://localhost:8000/patients
+#POST http://localhost:8000/patients
+### localstack addres
+POST http://lb-fc2332bc.elb.localhost.localstack.cloud:4004/api/patients
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "name": "Dili kafka test",
-  "email": "kafka_test@example.com",
+  "name": "Dili test new",
+  "email": "dili_test222@example.com",
   "address": "123 Main Street",
   "dateOfBirth": "1996-06-10",
   "registeredDate": "2025-06-11"
